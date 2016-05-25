@@ -33,29 +33,29 @@ def main():
 	if (boolTypeError == True) or (boolFileError == True):
 		objParser.print_help()
 
-		def process_cisco_ios_logs():
-			print 'Processing Cisco IOS Logs'
+def process_cisco_ios_logs():
+	print 'Processing Cisco IOS Logs'
 
-			def process_cisco_nxos_logs():
-				print 'Processing Cisco NX-OS Logs'
+def process_cisco_nxos_logs():
+	print 'Processing Cisco NX-OS Logs'
 
-				def process_junos_logs():
-					print 'Processing Juniper JunOS Logs'
+def process_junos_logs():
+	print 'Processing Juniper JunOS Logs'
 
-					def error_check_type_arg(strLogType):
-						if strLogType in dicLogType.keys():
-							dicLogType[strLogType]()
-						else:
-							print 'ERROR: You specified an invalid file type'
-							return True
+def error_check_type_arg(strLogType):
+	if strLogType in dicLogType.keys():
+		dicLogType[strLogType]()
+	else:
+		print 'ERROR: You specified an invalid file type'
+		return True
 
-							def error_check_file_exists(strFileName):
-								if os.path.isfile(strFileName):
-									objLogFile = open(strFileName)
-									return objLogFile
-								else:
-									print 'ERROR: You specified an invalid file. Be sure to give full path.'
-									return True
+def error_check_file_exists(strFileName):
+	if os.path.isfile(strFileName):
+		objLogFile = open(strFileName)
+		return objLogFile
+	else:
+		print 'ERROR: You specified an invalid file. Be sure to give full path.'
+		return True
 
 #If the user didn't input any of the required arguments let them know. I didn't feel like passing an parser object just to print the pretty help.
 def empty_argument_warning():
@@ -63,10 +63,10 @@ def empty_argument_warning():
 
 #This is the dictionary of possible file types and associated functions. It also includes the default value we set in the argument definition for empty file type. 
 dicLogType = {
-"check_string_for_empty": empty_argument_warning,
-"cisco-ios": process_cisco_ios_logs,
-"cisco-nxos": process_cisco_nxos_logs,
-"junos": process_junos_logs,
+	"check_string_for_empty": empty_argument_warning,
+	"cisco-ios": process_cisco_ios_logs,
+	"cisco-nxos": process_cisco_nxos_logs,
+	"junos": process_junos_logs,
 }
 
 #Let's get this party started!
