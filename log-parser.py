@@ -2,7 +2,7 @@
 import argparse
 import os.path
 
-def process_arguments():
+def main():
 	#Create an object to hold all our command line arguments
 	objParser = argparse.ArgumentParser(description='Parse, dedupe and priortize log files from network devices.')
 	#Add the file argument. 
@@ -67,4 +67,4 @@ dicType = {
 		"junos": process_junos_logs,
 	}
 
-process_arguments()
+main()
