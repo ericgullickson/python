@@ -7,13 +7,13 @@ def main():
 	objParser = argparse.ArgumentParser(description='Parse, dedupe and priortize log files from network devices.')
 	#Add the file argument. 
 	objParser.add_argument(
-					"-f", "--file", #these are the command line options that we take for this variable
-					dest="strFileName", #this is the actual variable inside code
-	                help="Logfile you'd like to parse. The full path is required.", #pretty description of the argument 
-	                metavar="FILE",
-	                nargs='?',
-	                default="check_string_for_empty" #this is here for our logic later on. 
-	                )
+		"-f", "--file", #these are the command line options that we take for this variable
+		dest="strFileName", #this is the actual variable inside code
+	    help="Logfile you'd like to parse. The full path is required.", #pretty description of the argument 
+	    metavar="FILE",
+	    nargs='?',
+	    default="check_string_for_empty" #this is here for our logic later on. 
+	    )
 	#This is the type of log file we want to parse. 
 	objParser.add_argument(
 		"-t", 
