@@ -14,16 +14,16 @@ def main():
         nargs='?',
         default="check_string_for_empty" #this is here for our logic later on.
         )
-	#This is the type of log file we want to parse.
-	objParser.add_argument(
-		"-t",
-		"--type",
-		dest="strLogType",
-		help="The type of logfile to parse. Available options are: cisco-ios,cisco-nxos,junos",
-		metavar="TYPE",
-		nargs='?',
-		default="check_string_for_empty"
-		)
+    #This is the type of log file we want to parse.
+    objParser.add_argument(
+        "-t",
+        "--type",
+        dest="strLogType",
+        help="The type of logfile to parse. Available options are: cisco-ios,cisco-nxos,junos",
+        metavar="TYPE",
+        nargs='?',
+        default="check_string_for_empty"
+        )
 
 	#Parse all our arguments into an object to be used later
 	objArguments = objParser.parse_args()
